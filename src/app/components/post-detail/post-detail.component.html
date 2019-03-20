@@ -1,0 +1,14 @@
+<div class="col-md-12" *ngIf="post; else noPost">
+  <h1>{{ post.title }}</h1>
+  <hr>
+  <p>
+    Categoría: {{ post.category.name }} | Creado por: <a [routerLink]="['/perfil', post.user.id]">{{ post.user.name }}</a> 
+  </p>
+  <p [innerHtml]="post.content"></p>
+</div>
+
+<ng-template #noPost>
+  <div class="col-md-12">
+    Cargando...
+  </div>
+</ng-template>
